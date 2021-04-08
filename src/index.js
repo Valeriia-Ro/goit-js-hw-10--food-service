@@ -25,18 +25,16 @@ function changeClass(addClass, remClass) {
   bodyRef.classList.add(addClass);
 }
 
-//обновляем цветовую тему
+
 function updateTheme(addClass, remClass) {
   changeClass(addClass, remClass);
   localStorage.setItem('Theme', addClass);
 }
 
-//передаем состояние инпута для изменения цветовой темы
 function defineTheme(e) {
   changeThemeColor(e.target.checked);
 }
 
-//переключаем цветовую тему
 function changeThemeColor(toggle) {
   if (toggle) {
     updateTheme(Theme.DARK, Theme.LIGHT);
@@ -45,7 +43,6 @@ function changeThemeColor(toggle) {
   }
 }
 
-//самовызывающаяся функция, срабатывает при загрузке страницы для определения цветовой темы
 (function () {
   const value = localStorage.getItem('Theme');
   const toggle = value === Theme.DARK;
